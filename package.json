@@ -5,15 +5,15 @@
   "main": "index.js",
   "scripts": {
     "seed": "node_modules/.bin/rlay-seed --input main.js --backend myneo4j > build/seeded/main.json",
-    "genclient": "node_modules/.bin/rlay-generate --seeded-schema ./build/seeded/main.json",
+    "genclient": "node_modules/.bin/rlay-generate --seed-file main.js --seed-file-output build/seeded/main.json --output generated/rlay-client/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@rlay/rlay-client-lib": "^0.2.0-pre.3",
-    "@rlay/utils": "https://github.com/rlay-project/rlay-utils.git#472f86e8748da790060525fb5c02592aa92d69fd",
+    "@rlay/rlay-client-lib": "^0.2.0-pre.8",
+    "@rlay/utils": "https://github.com/rlay-project/rlay-utils.git#5faaa04c98b859d4ca1feb041c41df82b9c81cfd",
     "@rlay/ontology": "0.1.0-alpha.1"
   }
 }

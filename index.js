@@ -1,11 +1,24 @@
 const client = require('./generated/rlay-client');
 
-const ind1 = client.Individual.create({
-  // websiteDataProperty: true,
-  websiteDataProperty: "Toasty 123"
-});
+const main = async () => {
+  const ind1 = client.Individual.create({
+    // websiteDataProperty: true,
+    websiteDataProperty: "Toasty 123"
+  });
 
-ind1.then(console.log);
+  const ind2 = client.Individual.create({
+    websiteDataProperty: true,
+    // websiteDataProperty: "Toasty 1234"
+  });
+
+  const insertedInd1 = await ind1;
+  console.log(insertedInd1.cid);
+  const dpa = insertedInd1.payload.data_property_assertions[0];
+  console.log(dpa);
+  const dpaFetched = await client.findEntityByCID(dpa);
+  console.log(dpaFetched);
+  // await ind2.then(({ cid }) => console.log(cid));
+}
 
 // const ontology = require('@rlay/ontology');
 
@@ -17,3 +30,5 @@ ind1.then(console.log);
 // });
 
 // console.log(cid);
+
+main()
