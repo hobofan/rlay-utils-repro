@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@rlay/rlay-client-lib": "^0.2.0-pre.8",
+    "@rlay/rlay-client-lib": "file:/Users/hobofan/rlay/rlay-utils/rlay-client-lib",
     "@rlay/utils": "https://github.com/rlay-project/rlay-utils.git#5faaa04c98b859d4ca1feb041c41df82b9c81cfd",
     "@rlay/ontology": "0.1.0-alpha.1"
   }

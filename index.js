@@ -3,7 +3,7 @@ const client = require('./generated/rlay-client');
 const main = async () => {
   const ind1 = client.Individual.create({
     // websiteDataProperty: true,
-    websiteDataProperty: "Toasty 123"
+    websiteDataProperty: "Toasty 1234"
   });
 
   const ind2 = client.Individual.create({
@@ -12,10 +12,13 @@ const main = async () => {
   });
 
   const insertedInd1 = await ind1;
-  console.log(insertedInd1.cid);
+  const insertedInd2 = await ind2;
+  console.log('IND1', insertedInd1.cid);
+  console.log('IND2', insertedInd2.cid);
   const dpa = insertedInd1.payload.data_property_assertions[0];
   console.log(dpa);
-  const dpaFetched = await client.findEntityByCID(dpa);
+  console.log(insertedInd1.payload)
+  const dpaFetched = await client.Entity.find(dpa);
   console.log(dpaFetched);
   // await ind2.then(({ cid }) => console.log(cid));
 }
